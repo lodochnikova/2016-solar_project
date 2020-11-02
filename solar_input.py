@@ -51,10 +51,11 @@ def parse_star_parameters(line, star):
     star.color = s[2]
     star.m = int(s[3])
     star.x = int(s[4])
-    star.y =int(s[5])
-    star.Vx =int(s[6])
-    star.Vy =int(s[7])
+    star.y = int(s[5])
+    star.Vx = int(s[6])
+    star.Vy = int(s[7])
     pass  # FIXME: not done yet
+
 
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
