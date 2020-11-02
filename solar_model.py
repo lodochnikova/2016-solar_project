@@ -19,8 +19,9 @@ def calculate_force(body, space_objects):
         if body is obj:
             continue  
         r = ((body.x - obj.x)**2 + (body.y - obj.y)**2)**0.5
-        body.Fx = (body.m * obj.m * gravitational_constant) * (body.x - obj.x) / r**3
-        body.Fy = (body.m * obj.m * gravitational_constant) * (body.y - obj.y) / r**3
+        print('Hi')
+        body.Fx -= (body.m * obj.m * gravitational_constant) * (body.x - obj.x) / r**3
+        body.Fy -=  (body.m * obj.m * gravitational_constant) * (body.y - obj.y) / r**3
 
 
 
@@ -32,13 +33,17 @@ def move_space_object(body, dt):
     **body** — тело, которое нужно переместить.
     """
 
-    ax = body.Fx / body.m
-    body.x += body.Vx * dt + ax * (dt**2) / 2
-    body.Vx += ax * dt
-
-    ay = body.Fy / body.m
-    body.y += body.Vy * dt + ay * (dt**2) / 2  
-    body.Vy += ay * dt
+    body.ax = body.Fx / body.m
+    body.x += body.Vx * dt + body.ax * (dt**2) / 2
+    #body.ax = body.Fx / body.m
+    body.Vx += body.ax * dt
+    #v2 = (Fx**2 + Fy**2)**0.5*body.x/body.m
+    
+    body.ay = body.Fy / body.m
+    body.y += body.Vy * dt + body.ay * (dt**2) / 2 
+    #body.ay = body.Fy / body.m
+    body.Vy += body.ay * dt 
+    #body.Vy += ay * dt
 
 
 def recalculate_space_objects_positions(space_objects, dt):

@@ -34,7 +34,8 @@ class Star:
 
     R = 5
     """Радиус звезды"""
-
+    ax = 1
+    ay = 1
     color = "red"
     """Цвет звезды"""
 
@@ -77,6 +78,9 @@ class Planet:
 
     color = "green"
     """Цвет планеты"""
+    ax = 1
+    ay = 1
+
 
     image = None
     """Изображение планеты"""
