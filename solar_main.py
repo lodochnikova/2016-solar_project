@@ -130,7 +130,7 @@ def main():
     start_button.pack(side=tkinter.LEFT)
 
     time_step = tkinter.DoubleVar()
-    time_step.set(100)
+    time_step.set(20000)
     time_step_entry = tkinter.Entry(frame, textvariable=time_step)
     time_step_entry.pack(side=tkinter.LEFT)
 
